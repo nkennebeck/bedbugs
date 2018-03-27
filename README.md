@@ -3,17 +3,17 @@ Rental Property Application
 
 To run Bedbugs on a localhost:
 
-  $ bundle install --without production
+    $ bundle install --without production
 
-  $ rails db:drop
+    $ rails db:drop
 
-  $ rails db:migrate
+    $ rails db:migrate
 
-  $ rails db:test:prepare
-  
-  $ rails db:seed
+    $ rails db:test:prepare
 
-  These steps update the Gemfile, and get the database into a known state.
+    $ rails db:seed
+
+  These steps update the Gemfile and get the database into a known state.
 
   Next, you will have to register for a free Google API key
     Go to https://developers.google.com/maps/documentation/geocoding/get-api-key
@@ -23,7 +23,7 @@ To run Bedbugs on a localhost:
       and uncomment that line.
 
 
-    To run the program, simply run
+  To run the program, simply run
     $ rails server
     in the terminal, and open
     localhost:3000
