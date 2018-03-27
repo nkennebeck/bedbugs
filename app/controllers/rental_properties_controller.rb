@@ -1,16 +1,21 @@
 class RentalPropertiesController < ApplicationController
   geocode_ip_address
 
+  # Dictates what is seen on the main page
   def index
+    # sources the location of the user using Geokit
     @location = get_location
+
     @properties = RentalProperty.all
     order = params[:order] || :distance
+
+    # sorts Rental Properties by a given order
     if order.to_sym != :distance
       @properties = @properties.order(order)
     else
-        if !@location.nil?
-          @properties = @properties.by_distance(:origin => @location)
-        end
+      if !@location.nil?
+        @properties = @properties.by_distance(:origin => @location)
+      end
     end
 
     if !params[:maxpersons].nil?
@@ -24,21 +29,27 @@ class RentalPropertiesController < ApplicationController
     end
   end
 
+  # what is seen for each individual property page
   def show
+    id = params[:id]
     @location = get_location
-    @property = RentalProperty.find(params[:id])
+    @property = RentalProperty.find(id)
   end
+
 
   def new
     # don't need anything in here
   end
+
 
   def create
     if params[:rental_property][:address] == ""
       flash[:warning] = "Rental Property couldn't be created"
       redirect_to new_rental_property_path and return
     end
+
     geo=Geokit::Geocoders::MultiGeocoder.geocode(params[:rental_property][:address])
+
     if geo.success
       prop = RentalProperty.new(create_update_params)
       prop.lat = geo.lat
@@ -56,9 +67,11 @@ class RentalPropertiesController < ApplicationController
     end
   end
 
+
   def edit
     @property = RentalProperty.find params[:id]
   end
+
 
   def update
     @property = RentalProperty.find params[:id]
@@ -79,12 +92,14 @@ class RentalPropertiesController < ApplicationController
     end
   end
 
+
   def destroy
     @property = RentalProperty.find(params[:id])
     @property.destroy
     flash[:notice] = "Rental Property '#{@property.title}' deleted."
     redirect_to rental_properties_path
   end
+
 
   private
   def get_location
@@ -103,8 +118,10 @@ class RentalPropertiesController < ApplicationController
     end
   end
 
-private
+
+  private
   def create_update_params
     params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :image)
   end
+
 end
