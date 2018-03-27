@@ -3,8 +3,11 @@ Rental Property Application
 
 Must have imagemagik installed:
 Windows subsystem for Linux users:
+
     $ sudo apt-get install imagemagick
+
 For MacOS with homebrew:
+
     $ brew install imagemagick
 
 # To run Bedbugs on a localhost:
