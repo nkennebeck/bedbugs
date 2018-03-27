@@ -10334,3 +10334,456 @@ Ip geocoding. address: 127.0.0.1, args []
 Completed 200 OK in 413ms (Views: 371.0ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:43:21 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.6ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (283.0ms)
+Completed 200 OK in 353ms (Views: 336.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRentalProperties (20170904184345)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170904184345"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAttachmentImageToRentalProperties (20180302153314)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_content_type" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180302153314"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:44:00.497091"], ["updated_at", "2018-03-27 13:44:00.497091"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "rental_properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180302153314)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170904184345);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:44:08.763030"], ["updated_at", "2018-03-27 13:44:08.763030"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "rental_properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lovely cottage by the sea"], ["description", "Waterfront view.  'Cozy', which basically means small, but you're here for the view anyway, right?  Sleeps four.  No pets allowed."], ["bedrooms", 2], ["beds", 2], ["maxpersons", 4], ["bathrooms", 1], ["pets_allowed", "f"], ["address", "Rockport, ME"], ["price", 120.5], ["lat", 44.1845], ["lng", -69.0761], ["created_at", "2018-03-27 13:44:15.184021"], ["updated_at", "2018-03-27 13:44:15.184021"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Remote cabin for escaping everything"], ["description", "Adirondack cabin with one double bedroom and a sofa, for when you want that third wheel along for the ride.  Beware the bears."], ["bedrooms", 1], ["beds", 2], ["maxpersons", 3], ["bathrooms", 1], ["pets_allowed", "f"], ["address", "Keene, NY"], ["price", 203.87], ["lat", 44.2562], ["lng", -73.7921], ["created_at", "2018-03-27 13:44:15.188665"], ["updated_at", "2018-03-27 13:44:15.188665"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Loft apartment"], ["description", "Apartment in a converted warehouse above two restaurants and a bar.  Amazingly quite for all that activity downstairs."], ["bedrooms", 1], ["beds", 1], ["maxpersons", 2], ["bathrooms", 1], ["pets_allowed", "t"], ["address", "Albany, NY"], ["price", 99.99], ["lat", 42.6526], ["lng", -75.7562], ["created_at", "2018-03-27 13:44:15.193528"], ["updated_at", "2018-03-27 13:44:15.193528"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Single family home, quiet neighborhood"], ["description", "Two story house with 3 bedrooms (one queen and two twins), kids toys, a big backyard, and quiet neighborhood.  Walking distance to everything and nothing, all at once.  One full bath and one quarter bath."], ["bedrooms", 3], ["beds", 3], ["maxpersons", 4], ["bathrooms", 2], ["pets_allowed", "f"], ["address", "Hamilton, NY"], ["price", 175.13], ["lat", 42.827], ["lng", -75.5446], ["created_at", "2018-03-27 13:44:15.197125"], ["updated_at", "2018-03-27 13:44:15.197125"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sofa at former coffee shop"], ["description", "Comfy sofa available for rent in a studio setting: the former Barge Canal coffee shop.  Just need to figure out how to pick the lock, but it's quiet and comfy.  Some crumbs left over from former tenants.  No coffee left, but you're better off going elsewhere anyway."], ["bedrooms", 0], ["beds", 1], ["maxpersons", 1], ["bathrooms", 0], ["pets_allowed", "t"], ["address", "Hamilton, NY"], ["price", 13.99], ["lat", 42.827], ["lng", -75.5446], ["created_at", "2018-03-27 13:44:15.200228"], ["updated_at", "2018-03-27 13:44:15.200228"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:44:27 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.3ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (330.4ms)
+Completed 200 OK in 395ms (Views: 375.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:46:04 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.3ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (294.7ms)
+Completed 200 OK in 350ms (Views: 331.7ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRentalProperties (20170904184345)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170904184345"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAttachmentImageToRentalProperties (20180302153314)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_content_type" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180302153314"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:46:23.303467"], ["updated_at", "2018-03-27 13:46:23.303467"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rental_properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180302153314)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170904184345);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:46:29.369858"], ["updated_at", "2018-03-27 13:46:29.369858"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "rental_properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lovely cottage by the sea"], ["description", "Waterfront view.  'Cozy', which basically means small, but you're here for the view anyway, right?  Sleeps four.  No pets allowed."], ["bedrooms", 2], ["beds", 2], ["maxpersons", 4], ["bathrooms", 1], ["pets_allowed", "f"], ["address", "Rockport, ME"], ["price", 120.5], ["lat", 44.1845], ["lng", -69.0761], ["created_at", "2018-03-27 13:46:36.019560"], ["updated_at", "2018-03-27 13:46:36.019560"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Remote cabin for escaping everything"], ["description", "Adirondack cabin with one double bedroom and a sofa, for when you want that third wheel along for the ride.  Beware the bears."], ["bedrooms", 1], ["beds", 2], ["maxpersons", 3], ["bathrooms", 1], ["pets_allowed", "f"], ["address", "Keene, NY"], ["price", 203.87], ["lat", 44.2562], ["lng", -73.7921], ["created_at", "2018-03-27 13:46:36.023291"], ["updated_at", "2018-03-27 13:46:36.023291"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Loft apartment"], ["description", "Apartment in a converted warehouse above two restaurants and a bar.  Amazingly quite for all that activity downstairs."], ["bedrooms", 1], ["beds", 1], ["maxpersons", 2], ["bathrooms", 1], ["pets_allowed", "t"], ["address", "Albany, NY"], ["price", 99.99], ["lat", 42.6526], ["lng", -75.7562], ["created_at", "2018-03-27 13:46:36.026128"], ["updated_at", "2018-03-27 13:46:36.026128"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Single family home, quiet neighborhood"], ["description", "Two story house with 3 bedrooms (one queen and two twins), kids toys, a big backyard, and quiet neighborhood.  Walking distance to everything and nothing, all at once.  One full bath and one quarter bath."], ["bedrooms", 3], ["beds", 3], ["maxpersons", 4], ["bathrooms", 2], ["pets_allowed", "f"], ["address", "Hamilton, NY"], ["price", 175.13], ["lat", 42.827], ["lng", -75.5446], ["created_at", "2018-03-27 13:46:36.028830"], ["updated_at", "2018-03-27 13:46:36.028830"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sofa at former coffee shop"], ["description", "Comfy sofa available for rent in a studio setting: the former Barge Canal coffee shop.  Just need to figure out how to pick the lock, but it's quiet and comfy.  Some crumbs left over from former tenants.  No coffee left, but you're better off going elsewhere anyway."], ["bedrooms", 0], ["beds", 1], ["maxpersons", 1], ["bathrooms", 0], ["pets_allowed", "t"], ["address", "Hamilton, NY"], ["price", 13.99], ["lat", 42.827], ["lng", -75.5446], ["created_at", "2018-03-27 13:46:36.031451"], ["updated_at", "2018-03-27 13:46:36.031451"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:46:45 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.5ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (324.1ms)
+Completed 200 OK in 384ms (Views: 366.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:47:36 -0400
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.2ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (19.1ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRentalProperties (20170904184345)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170904184345"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAttachmentImageToRentalProperties (20180302153314)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_content_type" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180302153314"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:50:45.759065"], ["updated_at", "2018-03-27 13:50:45.759065"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "rental_properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180302153314)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170904184345);
+
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:50:51.903434"], ["updated_at", "2018-03-27 13:50:51.903434"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM "rental_properties"[0m
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:51:10 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.2ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 395ms (Views: 379.9ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRentalProperties (20170904184345)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170904184345"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAttachmentImageToRentalProperties (20180302153314)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_content_type" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rental_properties" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180302153314"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:51:42.564036"], ["updated_at", "2018-03-27 13:51:42.564036"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "rental_properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "rental_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "bedrooms" integer, "beds" integer, "maxpersons" integer, "bathrooms" integer, "pets_allowed" boolean, "address" text, "price" decimal(10,2), "lat" decimal(15,10) NOT NULL, "lng" decimal(15,10) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180302153314)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170904184345);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 13:51:49.917990"], ["updated_at", "2018-03-27 13:51:49.917990"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "rental_properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lovely cottage by the sea"], ["description", "Waterfront view.  'Cozy', which basically means small, but you're here for the view anyway, right?  Sleeps four.  No pets allowed."], ["bedrooms", 2], ["beds", 2], ["maxpersons", 4], ["bathrooms", 1], ["pets_allowed", "f"], ["address", "Rockport, ME"], ["price", 120.5], ["lat", 44.1845], ["lng", -69.0761], ["created_at", "2018-03-27 13:51:57.029733"], ["updated_at", "2018-03-27 13:51:57.029733"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Remote cabin for escaping everything"], ["description", "Adirondack cabin with one double bedroom and a sofa, for when you want that third wheel along for the ride.  Beware the bears."], ["bedrooms", 1], ["beds", 2], ["maxpersons", 3], ["bathrooms", 1], ["pets_allowed", "f"], ["address", "Keene, NY"], ["price", 203.87], ["lat", 44.2562], ["lng", -73.7921], ["created_at", "2018-03-27 13:51:57.033612"], ["updated_at", "2018-03-27 13:51:57.033612"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Loft apartment"], ["description", "Apartment in a converted warehouse above two restaurants and a bar.  Amazingly quite for all that activity downstairs."], ["bedrooms", 1], ["beds", 1], ["maxpersons", 2], ["bathrooms", 1], ["pets_allowed", "t"], ["address", "Albany, NY"], ["price", 99.99], ["lat", 42.6526], ["lng", -75.7562], ["created_at", "2018-03-27 13:51:57.036784"], ["updated_at", "2018-03-27 13:51:57.036784"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Single family home, quiet neighborhood"], ["description", "Two story house with 3 bedrooms (one queen and two twins), kids toys, a big backyard, and quiet neighborhood.  Walking distance to everything and nothing, all at once.  One full bath and one quarter bath."], ["bedrooms", 3], ["beds", 3], ["maxpersons", 4], ["bathrooms", 2], ["pets_allowed", "f"], ["address", "Hamilton, NY"], ["price", 175.13], ["lat", 42.827], ["lng", -75.5446], ["created_at", "2018-03-27 13:51:57.040844"], ["updated_at", "2018-03-27 13:51:57.040844"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sofa at former coffee shop"], ["description", "Comfy sofa available for rent in a studio setting: the former Barge Canal coffee shop.  Just need to figure out how to pick the lock, but it's quiet and comfy.  Some crumbs left over from former tenants.  No coffee left, but you're better off going elsewhere anyway."], ["bedrooms", 0], ["beds", 1], ["maxpersons", 1], ["bathrooms", 0], ["pets_allowed", "t"], ["address", "Hamilton, NY"], ["price", 13.99], ["lat", 42.827], ["lng", -75.5446], ["created_at", "2018-03-27 13:51:57.044628"], ["updated_at", "2018-03-27 13:51:57.044628"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:52:03 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.2ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (296.0ms)
+Completed 200 OK in 354ms (Views: 337.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-27 09:54:15 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.2ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (295.7ms)
+Completed 200 OK in 359ms (Views: 341.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rental_properties/1" for 127.0.0.1 at 2018-03-27 09:54:21 -0400
+Processing by RentalPropertiesController#show as HTML
+  Parameters: {"id"=>"1"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  [1m[36mRentalProperty Load (0.3ms)[0m  [1m[34mSELECT  "rental_properties".* FROM "rental_properties" WHERE "rental_properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rental_properties/show.html.haml within layouts/application
+  Rendered rental_properties/show.html.haml within layouts/application (170.6ms)
+Completed 200 OK in 279ms (Views: 265.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rental_properties?order=maxpersons" for 127.0.0.1 at 2018-03-27 09:54:29 -0400
+Processing by RentalPropertiesController#index as HTML
+  Parameters: {"order"=>"maxpersons"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (1.0ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties" ORDER BY maxpersons[0m
+  Rendered rental_properties/index.html.haml within layouts/application (28.1ms)
+Completed 200 OK in 136ms (Views: 128.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rental_properties?order=maxpersons" for 127.0.0.1 at 2018-03-27 09:54:36 -0400
+Processing by RentalPropertiesController#index as HTML
+  Parameters: {"order"=>"maxpersons"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.4ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties" ORDER BY maxpersons[0m
+  Rendered rental_properties/index.html.haml within layouts/application (24.8ms)
+Completed 200 OK in 124ms (Views: 119.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rental_properties?order=price" for 127.0.0.1 at 2018-03-27 09:54:41 -0400
+Processing by RentalPropertiesController#index as HTML
+  Parameters: {"order"=>"price"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.5ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties" ORDER BY price[0m
+  Rendered rental_properties/index.html.haml within layouts/application (28.8ms)
+Completed 200 OK in 169ms (Views: 160.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rental_properties?utf8=%E2%9C%93&maxpersons=4&bathrooms=&price=&within=&miles_of=&commit=Refine+the+list+of+rental+properties" for 127.0.0.1 at 2018-03-27 09:54:48 -0400
+Processing by RentalPropertiesController#index as HTML
+  Parameters: {"utf8"=>"✓", "maxpersons"=>"4", "bathrooms"=>"", "price"=>"", "within"=>"", "miles_of"=>"", "commit"=>"Refine the list of rental properties"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.2ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties" WHERE (maxpersons >= '4')[0m
+  Rendered rental_properties/index.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 63ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rental_properties/new" for 127.0.0.1 at 2018-03-27 09:54:54 -0400
+Processing by RentalPropertiesController#new as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/new.html.haml within layouts/application
+  Rendered rental_properties/new.html.haml within layouts/application (33.6ms)
+Completed 200 OK in 144ms (Views: 138.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rental_properties" for 127.0.0.1 at 2018-03-27 09:55:14 -0400
+Processing by RentalPropertiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zKQikixCbERTBV7HWd33n6SQ0w/dBY9b14uisIJa7CR4yr3MoPyJ8+ITJgLVUdrY+ujTbq90hvFoe0yuhYOEZQ==", "rental_property"=>{"title"=>"My house", "description"=>"its nice", "address"=>"12 Maple", "maxpersons"=>"4", "bedrooms"=>"4", "beds"=>"4", "bathrooms"=>"4", "pets_allowed"=>"1", "price"=>"150"}, "commit"=>"Create Rental property"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+Multi geocoding. address: 12 Maple, args []
+Google geocoding. address: 12 Maple, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22U.S.+12%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US-12%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Maple+Plain%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Maple+Plain%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Hennepin+County%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Hennepin+County%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Minnesota%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MN%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22US-12%2C+Maple+Plain%2C+MN%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+45.0163479%2C%0A++++++++++++++++++%22lng%22+%3A+-93.63066710000001%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+44.9984158%2C%0A++++++++++++++++++%22lng%22+%3A+-93.70349019999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+45.0097695%2C%0A+++++++++++++++%22lng%22+%3A+-93.66672729999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22GEOMETRIC_CENTER%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+45.0163479%2C%0A++++++++++++++++++%22lng%22+%3A+-93.63066710000001%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+44.9984158%2C%0A++++++++++++++++++%22lng%22+%3A+-93.70349019999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22partial_match%22+%3A+true%2C%0A+++++++++%22place_id%22+%3A+%22EhtVUy0xMiwgTWFwbGUgUGxhaW4sIE1OLCBVU0E%22%2C%0A+++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "rental_properties" ("title", "description", "bedrooms", "beds", "maxpersons", "bathrooms", "pets_allowed", "address", "price", "lat", "lng", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "My house"], ["description", "its nice"], ["bedrooms", 4], ["beds", 4], ["maxpersons", 4], ["bathrooms", 4], ["pets_allowed", "t"], ["address", "12 Maple"], ["price", 150.0], ["lat", 45.0097695], ["lng", -93.6667273], ["created_at", "2018-03-27 13:55:39.350751"], ["updated_at", "2018-03-27 13:55:39.350751"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/rental_properties
+Completed 302 Found in 24530ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/rental_properties" for 127.0.0.1 at 2018-03-27 09:55:39 -0400
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.3ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+

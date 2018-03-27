@@ -2,13 +2,10 @@ class RentalPropertiesController < ApplicationController
   geocode_ip_address
 
   def index
-    #reset_session
     @location = get_location
     @properties = RentalProperty.all
     order = params[:order] || :distance
-    #byebug
     if order.to_sym != :distance
-      #byebug
       @properties = @properties.order(order)
     else
         if !@location.nil?
@@ -25,17 +22,6 @@ class RentalPropertiesController < ApplicationController
         @properties = RentalProperty.within(params[:within], :origin => params[:miles_of])
       end
     end
-    update_session(order)
-    #byebug
-  end
-
-  def update_session(order)
-    session[:maxpersons] = params[:maxpersons]
-    session[:bathrooms] = params[:bathrooms]
-    session[:price] = params[:price]
-    session[:within] = params[:within]
-    session[:miles_of] = params[:miles_of]
-    session[:order] = order
   end
 
   def show
@@ -44,11 +30,10 @@ class RentalPropertiesController < ApplicationController
   end
 
   def new
-
+    # don't need anything in here
   end
 
   def create
-    byebug
     if params[:rental_property][:address] == ""
       flash[:warning] = "Rental Property couldn't be created"
       redirect_to new_rental_property_path and return
@@ -69,7 +54,6 @@ class RentalPropertiesController < ApplicationController
       flash[:warning] = "Geocoding address failed"
       redirect_to new_rental_property_path
     end
-
   end
 
   def edit
@@ -77,12 +61,9 @@ class RentalPropertiesController < ApplicationController
   end
 
   def update
-    #make geokit adjust if changed
     @property = RentalProperty.find params[:id]
-    byebug
     if params[:rental_property][:address] != (@property.address)
       geo=Geokit::Geocoders::MultiGeocoder.geocode(@property.address)
-      byebug
       if geo.success
         @property.update(create_update_params)
         flash[:notice] = "#{@property.title} was successfully updated"
@@ -105,9 +86,11 @@ class RentalPropertiesController < ApplicationController
     redirect_to rental_properties_path
   end
 
-private
+  private
   def get_location
-    #return [42.8270, -75.5446] # hamilton ny
+    # if Geokit isn't working, comment out all other code
+    # and hard code in a latitude and longitude
+    # return [latitude,longitude]
     loc = session[:geo_location]
     if loc.nil?
       return loc
@@ -124,6 +107,4 @@ private
   def create_update_params
     params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :image)
   end
-
-
 end
