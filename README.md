@@ -2,10 +2,15 @@
 Rental Property Application
 
 To run Bedbugs on a localhost:
+
   $ bundle install --without production
+
   $ rails db:drop
+
   $ rails db:migrate
+
   $ rails db:test:prepare
+  
   $ rails db:seed
 
   These steps update the Gemfile, and get the database into a known state.
