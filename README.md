@@ -24,8 +24,8 @@ To run Bedbugs on a localhost:
 
 
   To run the program, simply run
-    $ rails server
+      $ rails server
     in the terminal, and open
     localhost:3000
 
-    Enjoy!
+  Enjoy!
