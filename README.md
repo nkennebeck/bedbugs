@@ -1,5 +1,4 @@
-# Bedbugs
-Rental Property Application
+# Bedbugs: Rental Property Application
 
 Must have imagemagik installed:
 Windows subsystem for Linux users:
@@ -24,13 +23,13 @@ For MacOS with homebrew:
 
   These steps update the Gemfile and get the database into a known state.
 
-  Next, you will have to register for a free Google API key
+  Next, you will have to register for a free Google API key.
 
   Go to:
 
    https://developers.google.com/maps/documentation/geocoding/get-api-key.
 
-  Register for a generic, unrestricted API key
+  Register for a generic, unrestricted API key.
 
   Open the file config/initializers/geokit_config.rb, and add your API key onto line 31 that currently reads
 
