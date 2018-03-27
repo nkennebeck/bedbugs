@@ -1,7 +1,13 @@
 # Bedbugs
 Rental Property Application
 
-To run Bedbugs on a localhost:
+Must have imagemagik installed:
+Windows subsystem for Linux users:
+    $ sudo apt-get install imagemagick
+For MacOS with homebrew:
+    $ brew install imagemagick
+
+# To run Bedbugs on a localhost:
 
     $ bundle install --without production
 
@@ -26,7 +32,7 @@ To run Bedbugs on a localhost:
   To run the program, simply run
 
       $ rails server
-      
+
   in the terminal, and open localhost:3000
 
   Enjoy!

@@ -10787,3 +10787,39 @@ Ip geocoding. address: 127.0.0.1, args []
 Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-27 11:07:49 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RentalPropertiesController#index as HTML
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.6ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties"[0m
+  Rendered rental_properties/index.html.haml within layouts/application (323.2ms)
+Completed 200 OK in 409ms (Views: 393.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rental_properties?utf8=%E2%9C%93&maxpersons=3&bathrooms=&price=&within=&miles_of=&commit=Refine+the+list+of+rental+properties" for 127.0.0.1 at 2018-03-27 11:08:06 -0400
+Processing by RentalPropertiesController#index as HTML
+  Parameters: {"utf8"=>"✓", "maxpersons"=>"3", "bathrooms"=>"", "price"=>"", "within"=>"", "miles_of"=>"", "commit"=>"Refine the list of rental properties"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.6ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties" WHERE (maxpersons >= '3')[0m
+  Rendered rental_properties/index.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rental_properties?utf8=%E2%9C%93&maxpersons=&bathrooms=&price=10000&within=&miles_of=&commit=Refine+the+list+of+rental+properties" for 127.0.0.1 at 2018-03-27 11:08:19 -0400
+Processing by RentalPropertiesController#index as HTML
+  Parameters: {"utf8"=>"✓", "maxpersons"=>"", "bathrooms"=>"", "price"=>"10000", "within"=>"", "miles_of"=>"", "commit"=>"Refine the list of rental properties"}
+Multi geocoding. address: 127.0.0.1, args []
+GeoPlugin geocoding. address: 127.0.0.1, args []
+Ip geocoding. address: 127.0.0.1, args []
+  Rendering rental_properties/index.html.haml within layouts/application
+  [1m[36mRentalProperty Load (0.2ms)[0m  [1m[34mSELECT "rental_properties".* FROM "rental_properties" WHERE (price <= '10000')[0m
+  Rendered rental_properties/index.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+

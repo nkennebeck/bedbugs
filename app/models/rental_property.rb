@@ -5,10 +5,10 @@ class RentalProperty < ApplicationRecord
 
   acts_as_mappable
 
-
-#make sure there's not a mismatch of data type in params (strings vs symbols)
+  # facilitates the user being able to filter properties by a given constraint
   def self.filter_on_constraints(constraint_hash)
     records = RentalProperty.all
+
     operator_hash = {
         :bedrooms => '>=',
         :beds => '>=',
@@ -17,9 +17,9 @@ class RentalProperty < ApplicationRecord
         :pets_allowed => '==',
         :price => '<=',
     }
+
     constraint_hash.each_pair do |symbol, value|
       operator = operator_hash[symbol.to_sym]
-      #byebug
       if !value.to_s.empty?
         if !operator.nil?
           records = records.where("#{symbol.to_s} #{operator} ?", value)
@@ -33,6 +33,7 @@ class RentalProperty < ApplicationRecord
     records
   end
 
+  # uses Geokit's distance_to method while checking for nil inputs
   def distance_from(location)
       return nil if location.nil?
       return  distance_to(location)

@@ -1,18 +1,20 @@
 #main.container
     %h3.header Properties available for rent
+
+    -# form that allows user to filter properties by different constraints
     =form_tag rental_properties_path, :method => :get do
         = label_tag :maximum_occupancy
-        = number_field_tag :maxpersons, session[:maxpersons]
+        = number_field_tag :maxpersons
         = label_tag :number_of_bathrooms
-        = number_field_tag :bathrooms, session[:bathrooms]
+        = number_field_tag :bathrooms
         = label_tag :maximum_price
-        = text_field_tag :price, session[:price]
+        = text_field_tag :price
         = label_tag :within
-        = number_field_tag :within, session[:within]
+        = number_field_tag :within
         = label_tag :miles_of
-        = text_field_tag :miles_of, session[:miles_of]
+        = text_field_tag :miles_of
         = submit_tag 'Refine the list of rental properties'
-    -#=button_to 'Clear all previous search parameters', session.clear
+
     %table.table
         %thead
             %tr
