@@ -1,0 +1,47 @@
+%h3.header= 'Edit rental property'
+
+=form_for RentalProperty.find(params[:id]) do |f|
+    =f.label :title
+    =f.text_field :title
+    %br
+
+    =f.label :description
+    =f.text_field :description
+    %br
+
+    =f.label :address
+    =f.text_field :address
+    %br
+
+    =f.label :max_occupancy
+    =f.number_field :maxpersons
+    %br
+
+    =f.label :number_of_bedrooms
+    =f.number_field :bedrooms
+    %br
+
+    =f.label :total_number_of_beds
+    =f.number_field :beds
+    %br
+
+    =f.label :total_number_of_bathrooms
+    =f.number_field :bathrooms
+    %br
+
+    =f.label :are_pets_allowed
+    =f.check_box :pets_allowed
+    %br
+
+    =f.label :price
+    =f.number_field :price
+    %br
+
+    =f.label :image
+    =f.file_field :image
+    %br
+
+    =f.submit
+    %br
+
+=link_to 'Back to Properties available for rent', rental_properties_path

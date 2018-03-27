@@ -1,0 +1,39 @@
+#main.container
+    %h3.header Properties available for rent
+    =form_tag rental_properties_path, :method => :get do
+        = label_tag :maximum_occupancy
+        = number_field_tag :maxpersons, session[:maxpersons]
+        = label_tag :number_of_bathrooms
+        = number_field_tag :bathrooms, session[:bathrooms]
+        = label_tag :maximum_price
+        = text_field_tag :price, session[:price]
+        = label_tag :within
+        = number_field_tag :within, session[:within]
+        = label_tag :miles_of
+        = text_field_tag :miles_of, session[:miles_of]
+        = submit_tag 'Refine the list of rental properties'
+    -#=button_to 'Clear all previous search parameters', session.clear
+    %table.table
+        %thead
+            %tr
+                %th= 'Image'
+                %th= link_to('Property', rental_properties_path(:order => 'title'))
+                %th Description
+                %th= link_to('Details', rental_properties_path(:order => 'maxpersons'))
+                %th= link_to('Distance from you', rental_properties_path(:order => 'distance'))
+                %th= link_to('Price per night', rental_properties_path(:order => 'price'))
+
+        %tbody
+            -@properties.each do |prop|
+                %tr.property
+                    %td.image= image_tag(prop.image.url(:thumb))
+                    %td.title= link_to "#{prop.title}", rental_property_path(prop)
+                    %td.description= truncate(prop.description, length: 60)
+                    %td.details= "Sleeps #{prop.maxpersons}, with #{pluralize(prop.bedrooms, 'bedroom')}, #{pluralize(prop.beds, 'bed')} and #{pluralize(prop.bathrooms, 'bathroom')}. Pets are #{prop.pets_allowed ? '' : 'not'} allowed."
+                    %td.details= number_to_human(prop.distance_from(@location), units: {unit: "mi"}) || "Unknown"
+                    %td.price= number_to_currency(prop.price)
+
+    %link= link_to 'Create a new rental property listing', new_rental_property_path
+
+    %br
+    %br
