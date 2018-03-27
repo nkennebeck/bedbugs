@@ -1,13 +1,26 @@
-# COSC480 Homework 4
+# Bedbugs
+Rental Property Application
 
-See homework instructions posted on Moodle.
+To run Bedbugs on a localhost:
+  $ bundle install --without production
+  $ rails db:drop
+  $ rails db:migrate
+  $ rails db:test:prepare
+  $ rails db:seed
 
-## Homework feedback
+  These steps update the Gemfile, and get the database into a known state.
 
- * 7-8 hours
+  Next, you will have to register for a free Google API key
+    Go to https://developers.google.com/maps/documentation/geocoding/get-api-key
+    Register for a generic, unrestricted API key
+    Open the file config/initializers/geokit_config.rb, and add your API key
+      onto line 31 that currently reads "# Geokit::Geocoders::GoogleGeocoder.api_key = ''"
+      and uncomment that line.
 
- * I got stuck on a lot of sections of this project, and it would have been really helpful to have had a lab or something so we could practice implementing some of these features in class with more guidance. I also had a lot of trouble with the Geokit.
 
-## Grade and feedback
+    To run the program, simply run
+    $ rails server
+    in the terminal, and open
+    localhost:3000
 
-Once you commit and submit your work to Github, I'll update this section with feedback and grading info.
+    Enjoy!
